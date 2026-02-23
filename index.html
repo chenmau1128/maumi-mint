@@ -1,70 +1,154 @@
 ﻿<!DOCTYPE html>
-<html lang="zh-TW" data-theme="dark">
-<head>
+<html lang="en" data-theme="dark">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MAUMI Dino Mint</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <!-- Google Fonts 可愛圓潤字體 -->
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <!-- ethers v6 CDN -->
-    <script src="https://cdn.ethers.io/lib/ethers-5.7.umd.min.js" type="text/javascript"></script>
-</head>
-<body>
-
+    <script
+      src="https://cdn.ethers.io/lib/ethers-5.7.umd.min.js"
+      type="text/javascript"
+    ></script>
+  </head>
+  <body>
     <header>
-        <nav>
-            <div class="logo">MAUMI Dino</div>
-            <div class="nav-links">
-                <a href="#">Explore</a>
-                <a href="#">About</a>
-                <a href="#">Create</a>
-            </div>
-        </nav>
+      <nav>
+        <div class="logo">MAUMI Dino</div>
+        <div class="nav-links">
+          <a href="#">Explore</a>
+          <a href="#">About</a>
+          <a href="#">Create</a>
+        </div>
+      </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="left">
-                <h1>Mint Your<br>MAUMI Dino</h1>
-                <p class="subtitle">台灣限定療癒恐龍 NFT<br>可愛冒險，從這裡開始 🦖✨</p>
+      <section class="hero">
+        <div class="left">
+          <h1>Mint Your<br />MAUMI Dino</h1>
+          <p class="subtitle">
+            A soothing NFT collection from Taiwan.<br />Your MAUMI Dino
+            adventure starts here. 🦖✨
+          </p>
 
-                <div class="mint-box">
-                    <button id="connectBtn" class="btn primary">Connect Wallet</button>
-                    <button id="mintBtn" class="btn primary" disabled>Mint Now →</button>
+          <div class="mint-box">
+            <button id="connectBtn" class="btn primary">Connect Wallet</button>
 
-                    <div class="progress-container">
-                        <div class="progress-circle" id="progressCircle">0%</div>
-                        <p>Minting Progress</p>
-                    </div>
-
-                    <p class="price">Price: 0.088 ETH <small>(Gas Fee Estimated)</small></p>
-                    <p class="warning">You must have funds in wallet for gas.</p>
-                </div>
+            <div class="quantity-row">
+              <span class="quantity-label">Quantity</span>
+              <div class="quantity-control">
+                <button
+                  type="button"
+                  id="decreaseQty"
+                  class="qty-btn"
+                  aria-label="Decrease quantity"
+                >
+                  −
+                </button>
+                <span id="quantityValue">1</span>
+                <button
+                  type="button"
+                  id="increaseQty"
+                  class="qty-btn"
+                  aria-label="Increase quantity"
+                >
+                  +
+                </button>
+              </div>
             </div>
 
-            <div class="right">
-                <div class="card-preview">
-                    <div class="circle-progress" id="nftCircle">
-                        <!-- 這裡可以放你恐龍圖片 -->
-                        <img src="https://via.placeholder.com/400x400/1a1a2e/89CFF0?text=MAUMI" alt="MAUMI Preview">
-                    </div>
-                    <div class="info">
-                        <span>MAUMI #XXXX</span>
-                        <span>0.088 ETH</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <button id="mintBtn" class="btn primary" disabled>
+              Mint 1 Now →
+            </button>
 
-        <!-- 你可以再加其他區塊，例如分類標籤 -->
-        <section class="categories">
-            <div>🦖 Art</div>
-            <div>🧸 Collectibles</div>
-            <div>🎮 Game Assets</div>
-        </section>
+            <div class="progress-container">
+              <div class="progress-circle" id="progressCircle">0%</div>
+              <p>Minting progress</p>
+            </div>
+
+            <p class="price">
+              Mint price: 0.1 SOL <small>(Network fee estimated)</small>
+            </p>
+            <p class="warning">
+              Make sure your wallet has enough SOL for fees.
+            </p>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="card-preview">
+            <div class="circle-progress" id="nftCircle">
+              <img
+                id="carouselImage"
+                class="carousel-image"
+                src="輪播1.png"
+                alt="MAUMI Preview"
+              />
+            </div>
+            <div class="info">
+              <span>MAUMI #XXXX</span>
+              <span>0.1 SOL</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="community">
+        <div class="community-left">
+          <h2>Join the MAUMI community</h2>
+          <p class="community-subtitle">
+            Stay close to the MAUMI Dino crew and never miss a drop, event, or
+            alpha.
+          </p>
+          <a
+            class="btn secondary"
+            href="https://t.me/+o5cFnD1LMuo2YzQ1"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Join Telegram</a
+          >
+        </div>
+        <div class="community-right">
+          <div class="founder-card">
+            <img
+              src="maumi_pfp.png"
+              alt="Maumi Avatar"
+              class="founder-avatar"
+            />
+            <div class="founder-info">
+              <span class="founder-role">Founder</span>
+              <a
+                href="https://www.instagram.com/maumi_._/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="founder-name"
+                >Maumi</a
+              >
+            </div>
+          </div>
+          <div class="founder-card">
+            <img src="max_pfp.png" alt="Max Avatar" class="founder-avatar" />
+            <div class="founder-info">
+              <span class="founder-role">Co-Founder</span>
+              <a
+                href="https://www.instagram.com/0x630_/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="founder-name"
+                >Max</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
